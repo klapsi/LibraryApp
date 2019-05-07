@@ -4,12 +4,8 @@ import java.util.Objects;
 
 public class Book {
 
-    private String title;
-    private Author author;
-
-    Book(){
-
-    }
+    protected String title;
+    protected Author author;
 
     public String getTitle() {
         return title;
