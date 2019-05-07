@@ -2,20 +2,20 @@ package pl.sda.libraryapp.model;
 
 import java.util.Objects;
 
-public class PaperBook extends Book implements PaperMedium {
+public class Magazine extends Medium implements PaperMedium {
 
-    PaperBook() {
-    }
-
-    private Cover cover;
+    private int number;
     private int pageCount;
 
-    public Cover getCover() {
-        return cover;
+    Magazine() {
     }
 
-    public void setCover(Cover cover) {
-        this.cover = cover;
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override public int getPageCount() {
@@ -36,16 +36,16 @@ public class PaperBook extends Book implements PaperMedium {
         if (!super.equals(o)) {
             return false;
         }
-        PaperBook paperBook = (PaperBook) o;
-        return cover == paperBook.cover;
+        pl.sda.libraryapp.model.Magazine magazine = (pl.sda.libraryapp.model.Magazine) o;
+        return number == magazine.number && pageCount == magazine.pageCount;
     }
 
     @Override public int hashCode() {
-        return Objects.hash(super.hashCode(), cover);
+        return Objects.hash(super.hashCode(), number, pageCount);
     }
 
     @Override public String toString() {
-        return "PaperBook{" + "author=" + author + ", title='" + title + '\'' + "cover=" + cover.getName() + '}';
+        return "Magazine{" + "number=" + number + ", pageCount=" + pageCount + ", title='" + title + '\'' + '}';
     }
 
 }

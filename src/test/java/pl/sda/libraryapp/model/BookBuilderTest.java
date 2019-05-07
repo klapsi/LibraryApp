@@ -1,6 +1,8 @@
 package pl.sda.libraryapp.model;
 
 import org.junit.Test;
+import pl.sda.libraryapp.model.Book;
+import pl.sda.libraryapp.model.BookBuilder;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -1,24 +1,30 @@
 package pl.sda.libraryapp.model;
 
 import org.junit.Test;
+import pl.sda.libraryapp.model.Cover;
+import pl.sda.libraryapp.model.PaperBook;
+import pl.sda.libraryapp.model.PaperBookBuilder;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class PaperBookBuilderTest {
 
-    @Test public void shouldBuildPaperBookWhenPaperBookDetailsAreDefined() {
+    @Test
+    public void shouldBuildPaperBookWhenPaperBookDetailsAreDefined() {
         // given
         String authorFirstName = "Henryk";
         String authorLastName = "Sienkiewicz";
         String title = "W pustyni i w puszczy";
         Cover cover = Cover.SOFT;
+        int pageCount = 100;
         // when
         PaperBook book = new PaperBookBuilder()//
                 .authorFirstName(authorFirstName)//
                 .authorLastName(authorLastName)//
                 .title(title)//
                 .cover(cover)//
+                .pageCount(pageCount)//
                 .build();
         // then
         assertNotNull(book);
@@ -27,6 +33,7 @@ public class PaperBookBuilderTest {
         assertEquals(authorLastName, book.getAuthor().getLastName());
         assertEquals(title, book.getTitle());
         assertEquals(cover, book.getCover());
+        assertEquals(pageCount, book.getPageCount());
     }
 
 }

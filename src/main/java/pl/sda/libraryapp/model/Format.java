@@ -1,15 +1,7 @@
 package pl.sda.libraryapp.model;
 
 public enum Format {
-    MP3("mp3"), FLAC("flac");
 
-    private String name;
+    MP3, FLAC;
 
-    Format(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 }
