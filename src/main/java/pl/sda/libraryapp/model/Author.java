@@ -40,7 +40,7 @@ import java.util.Objects;
         }
 
         @Override public String toString() {
-            return "Author{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + '}';
+            return firstName + ' ' + lastName + ' ';
         }
 
     }
