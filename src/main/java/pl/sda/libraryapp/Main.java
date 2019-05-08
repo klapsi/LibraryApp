@@ -1,8 +1,10 @@
-package pl.sda.libraryapp.model;
+package pl.sda.libraryapp;
 
 
 import pl.sda.libraryapp.command.Command;
+import pl.sda.libraryapp.command.CreateMultimediaCommand;
 import pl.sda.libraryapp.command.DisplayMultimediaCommand;
+import pl.sda.libraryapp.command.FilterByTypeCommand;
 import pl.sda.libraryapp.model.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +14,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Library<Medium> library = createLibrary();
+        Library<Medium> library = new Library<>();
         Scanner scanner = new Scanner(System.in);
         Map<String, Command> commands = new HashMap<>();
         commands.put("exit", () -> System.exit(0));
         commands.put("display", new DisplayMultimediaCommand(library, System.out));
+        commands.put("filter", new FilterByTypeCommand(library, System.out));
+        commands.put("create", new CreateMultimediaCommand(library, System.out));
         while (true) {
             System.out.println("Podaj komendę:");
             String commandName = scanner.nextLine();
