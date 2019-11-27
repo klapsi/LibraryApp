@@ -1,7 +1,6 @@
 package pl.sda.libraryapp.model;
 
 public enum Cover {
-
         SOFT("miękka"), HARD("twarda");
 
         private String name;
@@ -13,5 +12,4 @@ public enum Cover {
         public String getName() {
             return name;
         }
-
     }
